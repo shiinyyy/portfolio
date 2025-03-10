@@ -97,9 +97,9 @@ const projects = [
 
 // Skill data
 const skills = [
-  { name: "C/C++", icon: <Cpu className="h-8 w-8 text-primary" /> },
-  { name: "Verilog", icon: <FileCode className="h-8 w-8 text-primary" /> },
-  { name: "Python", icon: <Braces className="h-8 w-8 text-primary" /> },
+  { name: "C/C++", icon: <Cpu className="h-8 w-8 text-red-500" /> },
+  { name: "Verilog", icon: <FileCode className="h-8 w-8 text-red-500" /> },
+  { name: "Python", icon: <Braces className="h-8 w-8 text-red-500" /> },
   { name: "SQL", icon: <Database className="h-8 w-8 text-primary" /> },
   { name: "JavaScript", icon: <Flame className="h-8 w-8 text-primary" /> },
   { name: "TypeScript", icon: <Code className="h-8 w-8 text-primary" /> },
@@ -187,20 +187,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   )
 }
 
-// Extracurricular card properties
-interface ExtracurricularCardProps {
-  item: {
-    title: string
-    role: string
-    period: string
-    description: string
-    image: string
-    youtubeUrl: string
-  }
-}
-
 // Extracurricular card components
-const ExtracurricularCard = ({ item }: ExtracurricularCardProps) => {
+const ExtracurricularCard = ({ item }) => {
   return (
     <Card className="bg-zinc-800 border-zinc-700 hover:border-primary transition-colors overflow-hidden group">
       <div className="aspect-video bg-zinc-950 relative overflow-hidden">
@@ -301,7 +289,7 @@ export default function Portfolio() {
       </div>
 
       {/* Skills Section */}
-      <section className="py-20 bg-black" key="skills-section">
+      <section className="py-20 bg-black">
         <div className="container px-4 md:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
