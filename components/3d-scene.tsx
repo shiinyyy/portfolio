@@ -2,24 +2,31 @@
 import { useRef, useState } from "react"
 import { Canvas, useFrame } from "@react-three/fiber"
 import { Environment, OrbitControls, Sphere, Box, Torus } from "@react-three/drei"
+import { Mesh, Vector3, Group, Clock } from "three"
+import type { ThreeEvent } from "@react-three/fiber"
+
+interface InteractiveProps {
+  position?: [number, number, number]
+  color?: string
+}
+
+interface SceneState {
+  clock: Clock
+  camera: {
+    position: Vector3
+  }
+}
 
 // Interactive sphere component with hover effect
-function InteractiveSphere({ position = [0, 0, 0], color = "#8a2be2" }) {
-  const ref = useRef()
+function InteractiveSphere({ position = [0, 0, 0], color = "#8a2be2" }: InteractiveProps) {
+  const ref = useRef<Mesh>(null)
   const [hovered, setHovered] = useState(false)
   const [clicked, setClicked] = useState(false)
 
-  useFrame((state) => {
+  useFrame((_, delta) => {
     if (ref.current) {
-      ref.current.rotation.x += 0.01
-      ref.current.rotation.y += 0.01
-
-      // Pulse effect when hovered
-      if (hovered) {
-        ref.current.scale.x = Math.sin(state.clock.getElapsedTime() * 2) * 0.1 + 1.1
-        ref.current.scale.y = Math.sin(state.clock.getElapsedTime() * 2) * 0.1 + 1.1
-        ref.current.scale.z = Math.sin(state.clock.getElapsedTime() * 2) * 0.1 + 1.1
-      }
+      ref.current.rotation.x += delta * 0.2
+      ref.current.rotation.y += delta * 0.2
     }
   })
 
@@ -27,25 +34,28 @@ function InteractiveSphere({ position = [0, 0, 0], color = "#8a2be2" }) {
     <Sphere
       ref={ref}
       position={position}
-      args={[1, 32, 32]}
-      onClick={() => setClicked(!clicked)}
-      onPointerOver={() => setHovered(true)}
-      onPointerOut={() => setHovered(false)}
+      scale={clicked ? 1.5 : 1}
+      onClick={(event: ThreeEvent<MouseEvent>) => {
+        event.stopPropagation()
+        setClicked(!clicked)
+      }}
+      onPointerOver={(event: ThreeEvent<PointerEvent>) => {
+        event.stopPropagation()
+        setHovered(true)
+      }}
+      onPointerOut={(event: ThreeEvent<PointerEvent>) => {
+        event.stopPropagation()
+        setHovered(false)
+      }}
     >
-      <meshStandardMaterial
-        color={clicked ? "#ff5500" : hovered ? "#ff00ff" : color}
-        metalness={0.6}
-        roughness={0.2}
-        emissive={hovered ? "#330033" : "#000000"}
-        emissiveIntensity={hovered ? 2 : 0}
-      />
+      <meshStandardMaterial color={hovered ? "hotpink" : color} />
     </Sphere>
   )
 }
 
 // Interactive box component with rotation animation
-function InteractiveBox({ position = [0, 0, 0], color = "#4a00e0" }) {
-  const ref = useRef()
+function InteractiveBox({ position = [0, 0, 0], color = "#4a00e0" }: InteractiveProps) {
+  const ref = useRef<Mesh>(null)
   const [hovered, setHovered] = useState(false)
   const [clicked, setClicked] = useState(false)
 
@@ -67,10 +77,18 @@ function InteractiveBox({ position = [0, 0, 0], color = "#4a00e0" }) {
       ref={ref}
       position={position}
       args={[1.5, 1.5, 1.5]}
-      radius={0.2}
-      onClick={() => setClicked(!clicked)}
-      onPointerOver={() => setHovered(true)}
-      onPointerOut={() => setHovered(false)}
+      onClick={(event: ThreeEvent<MouseEvent>) => {
+        event.stopPropagation()
+        setClicked(!clicked)
+      }}
+      onPointerOver={(event: ThreeEvent<PointerEvent>) => {
+        event.stopPropagation()
+        setHovered(true)
+      }}
+      onPointerOut={(event: ThreeEvent<PointerEvent>) => {
+        event.stopPropagation()
+        setHovered(false)
+      }}
     >
       <meshStandardMaterial
         color={clicked ? "#00aaff" : hovered ? "#00ffaa" : color}
@@ -84,8 +102,8 @@ function InteractiveBox({ position = [0, 0, 0], color = "#4a00e0" }) {
 }
 
 // Floating torus component
-function FloatingTorus({ position = [0, 0, 0], color = "#ff3366" }) {
-  const ref = useRef()
+function FloatingTorus({ position = [0, 0, 0], color = "#ff3366" }: InteractiveProps) {
+  const ref = useRef<Mesh>(null)
 
   useFrame((state) => {
     if (ref.current) {
@@ -144,12 +162,12 @@ export default function ThreeDScene() {
 
       {/* Main 3D Canvas */}
       <Canvas
-        camera={{ position: [0, 0, 10], fov: 50 }}
+        camera={{ position: [0, 0, 5], fov: 50 }}
         className="w-full h-full"
         style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
       >
         <Scene />
-        <Environment preset="sunset" />
+        <Environment preset="city" />
       </Canvas>
     </div>
   )

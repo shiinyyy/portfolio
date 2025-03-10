@@ -187,8 +187,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   )
 }
 
+interface ExtracurricularItem {
+  title: string;
+  description: string;
+  image?: string;
+  link?: string;
+  period: string;
+  role: string;
+}
+
 // Extracurricular card components
-const ExtracurricularCard = ({ item }) => {
+const ExtracurricularCard = ({ item }: { item: ExtracurricularItem }) => {
   return (
     <Card className="bg-zinc-800 border-zinc-700 hover:border-primary transition-colors overflow-hidden group">
       <div className="aspect-video bg-zinc-950 relative overflow-hidden">
