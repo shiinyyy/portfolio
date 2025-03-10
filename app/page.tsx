@@ -47,7 +47,7 @@ const projects = [
     technologies: ["HTML", "Next.js", "Tailwind CSS", "Framer Motion"],
     image:
       "https://img.freepik.com/free-vector/boss-man-concept-illustration_114360-19846.jpg?t=st=1741533958~exp=1741537558~hmac=4211f882d8fb6d93318c6baeef2825331560afa416b08e6c521e4cb062e374e6&w=740",
-    demoUrl: "https://minhducdo.info",
+    demoUrl: "https://github.com/shiinyyy/portfolio",
     codeUrl: "https://github.com/shiinyyy/portfolio",
   },
   {
