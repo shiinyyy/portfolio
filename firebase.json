@@ -8,38 +8,17 @@
     "source": "dataconnect"
   },
   "hosting": {
-    "target": "minhducdo-info",
-    "public": "out",
+    "public": "public",
     "ignore": [
       "firebase.json",
+      "**/.*",
       "**/node_modules/**"
     ],
-    "headers": [
+    "rewrites": [
       {
         "source": "**",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "max-age=3600"
-          }
-        ]
-      },
-      {
-        "source": "/.well-known/acme-challenge/*",
-        "headers": [
-          {
-            "key": "Content-Type",
-            "value": "text/plain"
-          },
-          {
-            "key": "Cache-Control",
-            "value": "no-cache, no-store, must-revalidate"
-          }
-        ]
+        "destination": "/index.html"
       }
-    ],
-    "cleanUrls": false,
-    "trailingSlash": false,
-    "rewrites": []
+    ]
   }
 }
