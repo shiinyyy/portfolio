@@ -5,11 +5,8 @@
   "targets": {
     "portfolio-3fd9d": {
       "hosting": {
-        "portfolio-custom": [
-          "portfolio-custom"
-        ],
-        "minhducdo-info": [
-          "minhducdo-info"
+        "minhducdo": [
+          "minhducdo"
         ]
       }
     }
