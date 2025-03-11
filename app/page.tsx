@@ -310,7 +310,7 @@ export default function Portfolio() {
           >
             <h2 className="text-3xl md:text-4xl font-bold drop-shadow-lg bg-clip-text text-transparent bg-gradient-to-r from-white via-primary/80 to-white relative cursor-default transition-all duration-300 transform hover:scale-[1.02] hover:drop-shadow-[0_0_15px_rgba(139,92,246,0.5)]">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-white transition-all duration-700 ease-in-out hover:bg-gradient-to-r hover:from-primary hover:via-fuchsia-500 hover:to-purple-500">
-                My Skills
+                Skills and Techstack
               </span>
             </h2>
             <p className="text-zinc-400 max-w-2xl mx-auto">
