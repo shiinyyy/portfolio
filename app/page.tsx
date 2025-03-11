@@ -34,7 +34,7 @@ const projects = [
   {
     title: "AI-copilot",
     description:
-      "A model being trained on text messages all member in the team and gpt-3.5. It accepting prompt and response with basic answers (mostly nonsense because of unsopihsticated data training)",
+      "A model being trained on text messages of all member in the team and gpt-3.5. It accepting prompt and response with basic answers (mostly nonsense because of unsopihsticated data training)",
     technologies: ["Python", "HTML", "CSS"],
     image:
       "https://img.freepik.com/free-vector/dialog-with-chatbot-artificial-intelligence-reply-question-tech-support-instant-messaging-hotline-operator-ai-assistant-client-bot-consultant-ai-assistant-client-bot-consultant-vector-isolated-concept-metaphor-illustration_335657-4298.jpg?t=st=1741533756~exp=1741537356~hmac=77108721b1f2bf9591c154c8aa54f35795d1a0a982136ab85bdb6289c9d96904&w=740",
@@ -43,7 +43,7 @@ const projects = [
   },
   {
     title: "Portfolio Website",
-    description: "A responsive portfolio website showcases my skills with interactive objects",
+    description: "A responsive portfolio web app that showcases personal projects",
     technologies: ["HTML", "Next.js", "Tailwind CSS", "Framer Motion"],
     image:
       "https://img.freepik.com/free-vector/boss-man-concept-illustration_114360-19846.jpg?t=st=1741533958~exp=1741537558~hmac=4211f882d8fb6d93318c6baeef2825331560afa416b08e6c521e4cb062e374e6&w=740",
@@ -53,7 +53,7 @@ const projects = [
   {
     title: "Car-Parking System",
     description:
-      "An automated parking management system with real-time monitoring using ultrasonic sensors and LCD display for space detection",
+      "An automated parking management system with real-time monitoring using sensors and display for space detection",
     technologies: ["Arduino", "C", "C++", "Verilog HDL"],
     images: [
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Image%2010-3-2025%20at%202.12%E2%80%AFam-HQOYAY0DVPQe7eHgMqGXLp8sNP38jH.jpeg",
@@ -77,7 +77,7 @@ const projects = [
   {
     title: "Voice Assistant",
     description:
-      "Real-time voice assistant as a function for a smart hub. It integrated with multiple api including openAI-4o for data accessibility, Silero and Deepgram for text-to-speech/speech-to-text",
+      "Voice assistant as a function for a smart hub. It integrated with multiple api including openAI-4o for data accessibility, Silero and Deepgram for text-to-speech/speech-to-text",
     technologies: ["Python", "SQL"],
     image:
       "https://img.freepik.com/free-vector/voice-control-concept-illustration_114360-1250.jpg?t=st=1741534716~exp=1741538316~hmac=c83fb125432bab8ebb5ae20db5baf1c7eb57f9c5e3360a7a5286228310d87593&w=740",
@@ -187,6 +187,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   )
 }
 
+//Extracurricular card properties
 interface ExtracurricularItem {
   title: string;
   description: string;
@@ -196,7 +197,7 @@ interface ExtracurricularItem {
   role: string;
 }
 
-// Extracurricular card components
+// Extracurricular components
 const ExtracurricularCard = ({ item }: { item: ExtracurricularItem }) => {
   return (
     <Card className="bg-zinc-800 border-zinc-700 hover:border-primary transition-colors overflow-hidden group">
@@ -260,7 +261,7 @@ export default function Portfolio() {
             </h1>
             <p className="text-xl md:text-2xl text-zinc-400">
               A passionate Engineering graduate from University of Technology Sydney specialised in Electrical and Data.
-              I also explore other topics covering computer science and major framworks as a hobby in leisure.
+              I also explore other topics covering computer science, FinTech and major frameworks as a hobby in leisure.
             </p>
             <div className="flex gap-4">
               <Button
@@ -438,7 +439,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Location Section with Enhanced Styling */}
+      {/* Location Section */}
       <section className="py-20 relative overflow-hidden">
         {/* Gradient background */}
         <div className="absolute inset-0 bg-gradient-to-b from-zinc-900 via-zinc-800 to-zinc-900"></div>
