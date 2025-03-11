@@ -28,72 +28,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import ThreeDScene from "@/components/3d-scene"
 import ProjectsSection from "@/components/projects-section"
-
-// Project card data
-const projects = [
-  {
-    title: "AI-copilot",
-    description:
-      "A model being trained on text messages of all member in the team and gpt-3.5. It accepting prompt and response with basic answers (mostly nonsense because of unsopihsticated data training)",
-    technologies: ["Python", "HTML", "CSS"],
-    image:
-      "https://img.freepik.com/free-vector/dialog-with-chatbot-artificial-intelligence-reply-question-tech-support-instant-messaging-hotline-operator-ai-assistant-client-bot-consultant-ai-assistant-client-bot-consultant-vector-isolated-concept-metaphor-illustration_335657-4298.jpg?t=st=1741533756~exp=1741537356~hmac=77108721b1f2bf9591c154c8aa54f35795d1a0a982136ab85bdb6289c9d96904&w=740",
-    demoUrl: "https://github.com/shiinyyy/ai-copilot",
-    codeUrl: "https://github.com/shiinyyy/ai-copilot",
-  },
-  {
-    title: "Portfolio Website",
-    description: "A responsive portfolio web app that showcases personal projects",
-    technologies: ["HTML", "Next.js", "Tailwind CSS", "Framer Motion"],
-    image:
-      "https://img.freepik.com/free-vector/boss-man-concept-illustration_114360-19846.jpg?t=st=1741533958~exp=1741537558~hmac=4211f882d8fb6d93318c6baeef2825331560afa416b08e6c521e4cb062e374e6&w=740",
-    demoUrl: "https://github.com/shiinyyy/portfolio",
-    codeUrl: "https://github.com/shiinyyy/portfolio",
-  },
-  {
-    title: "Car-Parking System",
-    description:
-      "An automated parking management system with real-time monitoring using sensors and display for space detection",
-    technologies: ["Arduino", "C", "C++", "Verilog HDL"],
-    images: [
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Image%2010-3-2025%20at%202.12%E2%80%AFam-HQOYAY0DVPQe7eHgMqGXLp8sNP38jH.jpeg",
-    ],
-    currentImageIndex: 0,
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Image%2010-3-2025%20at%202.12%E2%80%AFam-HQOYAY0DVPQe7eHgMqGXLp8sNP38jH.jpeg", // Default to first image
-    demoUrl: "https://drive.google.com/file/d/1smG807Y6wPASWdU0KTMxHjZYZOCAKADx/view?usp=sharing",
-    codeUrl: "https://github.com/shiinyyy/Parking-System-Cyclone-IV",
-  },
-  {
-    title: "MPPT tracking",
-    description:
-      "Tracking maximum power point of solar panel to maximise power generation. Perturb and Observe is the main algorithm while artificial neural network represented as fine-tune algorithm to increase the efficiency",
-    technologies: ["Arduino", "C", "C++"],
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Image%2010-3-2025%20at%202.13%E2%80%AFam-y8YfRubDcfZEMHYzObtMqu6oqmqUJQ.jpeg",
-    demoUrl: "https://drive.google.com/file/d/1UtEzux2xu0QF2GjWsNpefvQQtW-GeWFu/view?usp=drive_link",
-    codeUrl: "https://github.com/shiinyyy/MPPT-Tracking",
-  },
-  {
-    title: "Voice Assistant",
-    description:
-      "Voice assistant as a function for a smart hub. It integrated with multiple api including openAI-4o for data accessibility, Silero and Deepgram for text-to-speech/speech-to-text",
-    technologies: ["Python", "SQL"],
-    image:
-      "https://img.freepik.com/free-vector/voice-control-concept-illustration_114360-1250.jpg?t=st=1741534716~exp=1741538316~hmac=c83fb125432bab8ebb5ae20db5baf1c7eb57f9c5e3360a7a5286228310d87593&w=740",
-    demoUrl: "https://www.figma.com/design/JGIOROtt15pOmdv720hWGT/Minh-Duc-Do?node-id=0-1&t=uNki1yEZxT9FMOjB-1",
-    codeUrl: "https://github.com/shiinyyy/Voice_Assistant",
-  },
-  {
-    title: "Rock, paper, scissors",
-    description: "A simple game I created when praticing conditional function with Js",
-    technologies: ["JavaScript"],
-    image:
-      "https://img.freepik.com/free-vector/rock-paper-scissors-posters-with-palm-hands-fist-victory-symbol-vector-banners-hand-gesture-game-with-cartoon-illustration-human-arms-playing-gesturing-game_107791-8421.jpg?t=st=1741550617~exp=1741554217~hmac=3e74a02688448c1ffaa5f60db3d869d7574e1d1ad88a554dbfbdc3b493fc2a96&w=996",
-    demoUrl: "https://github.com/shiinyyy/Rock-paper-scissor",
-    codeUrl: "https://github.com/shiinyyy/Rock-paper-scissor",
-  },
-]
+import { projects } from "@/data/projects"
 
 // Skill data
 const skills = [
