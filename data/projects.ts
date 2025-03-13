@@ -1,4 +1,6 @@
-export const projects = [
+import { ProjectCardProps } from "@/components/project-card"
+
+export const projects: ProjectCardProps["project"][] = [
   {
     title: "AI-copilot",
     description:

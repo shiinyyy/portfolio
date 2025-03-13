@@ -28,7 +28,6 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import ThreeDScene from "@/components/3d-scene"
 import ProjectsSection from "@/components/projects-section"
-import { projects } from "@/data/projects"
 
 // Skill data
 const skills = [
@@ -44,8 +43,19 @@ const skills = [
   { name: "Electrical & Electronics Design", icon: <Boxes className="h-10 w-10 text-red-500" /> },
 ]
 
+//Extracurricular card properties
+interface ExtracurricularItem {
+  title: string;
+  description: string;
+  image?: string;
+  link?: string;
+  period: string;
+  role: string;
+  youtubeUrl: string;
+}
+
 // Leadership experience data
-const extracurriculars = [
+const extracurriculars: ExtracurricularItem[] = [
   {
     title: "IX Studio Showcase",
     role: "Instructor",
@@ -65,100 +75,6 @@ const extracurriculars = [
     youtubeUrl: "https://youtu.be/OkEINKDTbHU?si=u6OPODy8utLe4_yY",
   },
 ]
-
-// Project card properties
-interface ProjectCardProps {
-  project: {
-    title: string
-    description: string
-    technologies: string[]
-    image: string
-    demoUrl: string
-    codeUrl: string
-  }
-}
-
-const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
-  return (
-    <Card className="bg-zinc-800 border-zinc-700 hover:border-primary transition-colors overflow-hidden group">
-      <div className="aspect-video bg-zinc-950 relative overflow-hidden">
-        <Image
-          src={project.image || "/placeholder.svg"}
-          alt={project.title}
-          fill
-          className="object-cover transition-transform group-hover:scale-105"
-          unoptimized={project.image.includes("drive.google.com")}
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity" />
-      </div>
-      <CardHeader>
-        <CardTitle>{project.title}</CardTitle>
-        <CardDescription className="text-zinc-400">{project.description}</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <div className="flex flex-wrap gap-2">
-          {project.technologies.map((tech, i) => (
-            <span key={i} className="px-2 py-1 bg-zinc-700 rounded-md text-xs">
-              {tech}
-            </span>
-          ))}
-        </div>
-      </CardContent>
-      <CardFooter className="flex justify-between">
-        <Button variant="ghost" size="sm" className="hover:bg-zinc-700" asChild>
-          <Link href={project.codeUrl} target="_blank" rel="noopener noreferrer">
-            <Github className="mr-2 h-4 w-4" />
-            Code
-          </Link>
-        </Button>
-        <Button size="sm" className="group" asChild>
-          <Link href={project.demoUrl} target="_blank" rel="noopener noreferrer">
-            View Demo
-            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Link>
-        </Button>
-      </CardFooter>
-    </Card>
-  )
-}
-
-//Extracurricular card properties
-interface ExtracurricularItem {
-  title: string;
-  description: string;
-  image?: string;
-  link?: string;
-  period: string;
-  role: string;
-}
-
-// Extracurricular components
-const ExtracurricularCard = ({ item }: { item: ExtracurricularItem }) => {
-  return (
-    <Card className="bg-zinc-800 border-zinc-700 hover:border-primary transition-colors overflow-hidden group">
-      <div className="aspect-video bg-zinc-950 relative overflow-hidden">
-        <Image
-          src={item.image || "/placeholder.svg?height=400&width=600"}
-          alt={item.title}
-          fill
-          className="object-cover transition-transform group-hover:scale-105"
-          unoptimized={typeof item.image === "string" && item.image.includes("freepik.com")}
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity" />
-      </div>
-      <CardHeader>
-        <div className="flex justify-between items-start">
-          <CardTitle>{item.title}</CardTitle>
-          <span className="text-xs text-zinc-400 bg-zinc-700 px-2 py-1 rounded-full">{item.period}</span>
-        </div>
-        <CardDescription className="text-primary font-medium">{item.role}</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <p className="text-zinc-400">{item.description}</p>
-      </CardContent>
-    </Card>
-  )
-}
 
 export default function Portfolio() {
   const ref = useRef(null)

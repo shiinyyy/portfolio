@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Github, ArrowRight } from "lucide-react"
 
-interface ProjectCardProps {
+export interface ProjectCardProps {
   project: {
     title: string
     description: string
