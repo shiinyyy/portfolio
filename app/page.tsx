@@ -480,7 +480,7 @@ export default function Portfolio() {
           >
             <h2 className="text-3xl md:text-4xl font-bold drop-shadow-md mb-4">Get In Touch</h2>
             <p className="text-zinc-400">
-              recently completed my last units on November 2024. You can find me on social media and my project
+              I recently completed my last units on November 2024. You can find me on social media and my project
               repositories here
             </p>
           </motion.div>
