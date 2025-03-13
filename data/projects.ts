@@ -2,7 +2,7 @@ export const projects = [
   {
     title: "AI-copilot",
     description:
-      "A model being trained on text messages of all member in the team and gpt-3.5. It accepting prompt and response with basic answers (mostly nonsense because of unsopihsticated data training)",
+      "A model being trained on text messages of all members in the team and gpt-3.5. It accepting prompt and response with basic answers (mostly nonsense because of unsopihsticated data training)",
     technologies: ["Python", "HTML", "CSS"],
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/robot.jpg-qJPWwO4xOxWLbnUMTXMzdxg4jOYIGh.jpeg",
     demoUrl: "https://github.com/shiinyyy/ai-copilot",
