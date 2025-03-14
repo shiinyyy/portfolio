@@ -7,9 +7,17 @@ export default function Preloader() {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
+    // Scroll to top immediately when component mounts
+    window.scrollTo(0, 0)
+    
     const timer = setTimeout(() => {
       setIsLoading(false)
-    }, 5000) // 4 seconds to show loading animation twice
+      // Ensure we're at the top when loading finishes
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      })
+    }, 5000) // 5 seconds to show loading animation twice
 
     return () => clearTimeout(timer)
   }, [])
