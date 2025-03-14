@@ -53,14 +53,14 @@ export function ProjectCard({ project }: ProjectCardProps) {
         />
         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity" />
       </div>
-      <CardHeader className="flex-none">
-        <CardTitle className="line-clamp-2 min-h-[3.5rem]">{project.title}</CardTitle>
-        <CardDescription className="text-zinc-400 min-h-[4.5rem] line-clamp-3">{project.description}</CardDescription>
+      <CardHeader className="flex-none space-y-2 pb-3">
+        <CardTitle className="line-clamp-2 min-h-[2rem] text-lg">{project.title}</CardTitle>
+        <CardDescription className="text-zinc-400 min-h-[6rem] line-clamp-4 text-sm leading-relaxed">{project.description}</CardDescription>
       </CardHeader>
-      <CardContent className="flex-1">
-        <div className="flex flex-wrap gap-2 min-h-[2.5rem]">
+      <CardContent className="pt-0">
+        <div className="flex flex-wrap gap-1.5">
           {project.technologies.map((tech, i) => (
-            <span key={i} className="px-2 py-1 bg-zinc-700 rounded-md text-xs whitespace-nowrap">
+            <span key={i} className="px-2 py-0.5 bg-zinc-700 rounded-md text-xs whitespace-nowrap">
               {tech}
             </span>
           ))}
