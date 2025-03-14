@@ -28,17 +28,6 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import ThreeDScene from "@/components/3d-scene"
 import ProjectsSection from "@/components/projects-section"
-import { DotLottieReact } from '@lottiefiles/dotlottie-react';
-
-const App = () => {
-  return (
-    <DotLottieReact
-      src="path/to/animation.lottie"
-      loop
-      autoplay
-    />
-  );
-};
 
 // Skill data
 const skills = [
@@ -212,7 +201,7 @@ export default function Portfolio() {
             <h2 className="text-3xl md:text-4xl font-bold drop-shadow-md">Extracurricular Activities</h2>
             <p className="text-zinc-400 max-w-2xl mx-auto">
               Beyond academics, I actively participate in various activities that help me grow personally and
-              professionally. Help to build the commnunity with a start-up, IX Studio. And my friends called me Shiiny
+              professionally. Help to build the commnunity with a start-up, IX Studio. And my friends called my Shiiny
               :)
             </p>
           </motion.div>

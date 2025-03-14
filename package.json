@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@firebasegen/default-connector": "file:dataconnect-generated/js/default-connector",
-    "@lottiefiles/dotlottie-react": "^0.13.2",
     "@radix-ui/react-slot": "^1.1.2",
     "@react-three/drei": "^10.0.4",
     "@react-three/fiber": "^9.1.0",
