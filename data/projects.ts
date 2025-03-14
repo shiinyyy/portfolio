@@ -13,7 +13,7 @@ export const projects: ProjectCardProps["project"][] = [
   {
     title: "Portfolio Website",
     description: "A responsive portfolio website showcases my skills with interactive objects",
-    technologies: ["HTML", "Next.js", "Tailwind CSS", "Framer Motion", "React"],
+    technologies: ["HTML", "Next.js", "Tailwind CSS", "Framer Motion", "React", "Typescript"],
     image:
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-03-10%20at%207.10.27%E2%80%AFpm-W85TRu4jeHshvAlXe7vrpd2k9b30Vk.png",
     demoUrl: "https://minhducdo.info",
