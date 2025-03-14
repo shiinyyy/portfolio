@@ -39,7 +39,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
   }, [project.images])
 
   return (
-    <Card className="bg-zinc-800 border-zinc-700 hover:border-primary transition-colors overflow-hidden group">
+    <Card className="bg-zinc-800 border-zinc-700 hover:border-primary transition-colors overflow-hidden group h-full flex flex-col">
       <div className="aspect-video bg-zinc-950 relative overflow-hidden">
         <Image
           src={currentImage || "/placeholder.svg?height=400&width=600"}
@@ -53,12 +53,12 @@ export function ProjectCard({ project }: ProjectCardProps) {
         />
         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity" />
       </div>
-      <CardHeader>
-        <CardTitle>{project.title}</CardTitle>
-        <CardDescription className="text-zinc-400">{project.description}</CardDescription>
+      <CardHeader className="flex-none">
+        <CardTitle className="line-clamp-1">{project.title}</CardTitle>
+        <CardDescription className="text-zinc-400 min-h-[48px] line-clamp-2">{project.description}</CardDescription>
       </CardHeader>
-      <CardContent>
-        <div className="flex flex-wrap gap-2">
+      <CardContent className="flex-1">
+        <div className="flex flex-wrap gap-2 min-h-[32px]">
           {project.technologies.map((tech, i) => (
             <span key={i} className="px-2 py-1 bg-zinc-700 rounded-md text-xs">
               {tech}
@@ -66,7 +66,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           ))}
         </div>
       </CardContent>
-      <CardFooter className="flex justify-between">
+      <CardFooter className="flex justify-between flex-none mt-auto border-t border-zinc-700/50 pt-4">
         <Button variant="ghost" size="sm" className="hover:bg-zinc-700" asChild>
           <Link href={project.codeUrl} target="_blank" rel="noopener noreferrer">
             <Github className="mr-2 h-4 w-4" />

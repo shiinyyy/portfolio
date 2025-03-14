@@ -9,7 +9,7 @@ export default function Preloader() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false)
-    }, 4000) // 4 seconds to show loading animation twice
+    }, 5000) // 4 seconds to show loading animation twice
 
     return () => clearTimeout(timer)
   }, [])
@@ -18,14 +18,14 @@ export default function Preloader() {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-zinc-900">
-      <div className="relative w-[150px] h-[150px]">
+      <div className="relative w-[170px] h-[170px]">
         <Image
           src="/Loading.gif"
           alt="Loading..."
           fill
           priority
           className="object-contain"
-          sizes="150px"
+          sizes="170px"
           style={{
             WebkitBackfaceVisibility: "hidden",
             WebkitTransform: "translateZ(0)",
