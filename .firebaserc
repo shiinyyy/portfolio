@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "portfolio-3fd9d"
+  },
+  "targets": {
+    "portfolio-3fd9d": {
+      "hosting": {
+        "minhducdo": [
+          "minhducdo"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
