@@ -13,6 +13,12 @@ export const Preloader = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  React.useEffect(() => {
+    if (!loading) {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    }
+  }, [loading]);
+
   return (
     <>
       {loading && (
@@ -46,7 +52,7 @@ export const PreloaderGH = () => {
             src="https://lottie.host/e841dc14-7da1-4fda-905f-4f34c2183f7f/aosKWTlVb6.lottie"
             loop
             autoplay
-            style={{ width: 400, height: 400 }}
+            style={{ width: 300, height: 300 }}
           />
         </div>
       )}

@@ -109,7 +109,7 @@ export default function Portfolio() {
             </h1>
             <p className="text-xl md:text-2xl text-zinc-400">
               A passionate Engineering graduate from University of Technology Sydney, specialising in Electrical and Data.
-              Beyond me core discipline, I actively explore FinTech, computer science and major frameworks as part of my technical interests.
+              Beyond my core discipline, I actively explore FinTech, computer science and major frameworks as part of my technical interests.
             </p>
             <div className="flex gap-4">
               <Button

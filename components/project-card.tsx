@@ -70,7 +70,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <Button variant="ghost" size="sm" className="hover:bg-zinc-700 hover:text-white text-zinc-500" asChild>
           <Link href={project.codeUrl} target="_blank" rel="noopener noreferrer">
             <Github className="mr-2 h-4 w-4" />
-            Code
+            Source
           </Link>
         </Button>
         <Button size="sm" className="group" asChild>
