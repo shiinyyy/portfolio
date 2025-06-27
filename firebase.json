@@ -1,46 +1,12 @@
 {
-  "emulators": {
-    "dataconnect": {
-      "dataDir": "dataconnect/.dataconnect/pgliteData"
-    }
-  },
-  "dataconnect": {
-    "source": "dataconnect"
-  },
   "hosting": {
     "site": "minhducdo",
     "public": "out",
     "ignore": [
       "firebase.json",
+      "**/.*",
       "**/node_modules/**"
     ],
-    "domains": ["minhducdo.info"],
-    "headers": [
-      {
-        "source": "**",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "max-age=3600"
-          }
-        ]
-      },
-      {
-        "source": "/.well-known/acme-challenge/*",
-        "headers": [
-          {
-            "key": "Content-Type",
-            "value": "text/plain"
-          },
-          {
-            "key": "Cache-Control",
-            "value": "no-cache, no-store, must-revalidate"
-          }
-        ]
-      }
-    ],
-    "cleanUrls": false,
-    "trailingSlash": false,
-    "rewrites": []
+    "cleanUrls": true
   }
 }

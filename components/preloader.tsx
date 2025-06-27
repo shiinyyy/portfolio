@@ -1,46 +1,56 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import Image from "next/image"
+import React from 'react';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
-export default function Preloader() {
-  const [isLoading, setIsLoading] = useState(true)
+export const Preloader = () => {
+  console.log("Rendering Preloader (main)");
+  const [loading, setLoading] = React.useState(true);
 
-  useEffect(() => {
-    // Scroll to top immediately when component mounts
-    window.scrollTo(0, 0)
-    
-    const timer = setTimeout(() => {
-      setIsLoading(false)
-      // Ensure we're at the top when loading finishes
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      })
-    }, 5000) // 5 seconds to show loading animation twice
-
-    return () => clearTimeout(timer)
-  }, [])
-
-  if (!isLoading) return null
+  React.useEffect(() => {
+    // Simulate loading or listen for real loading events
+    const timer = setTimeout(() => setLoading(false), 4000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-zinc-900">
-      <div className="relative w-[170px] h-[170px]">
-        <Image
-          src="/Loading.gif"
-          alt="Loading..."
-          fill
-          priority
-          className="object-contain"
-          sizes="170px"
-          style={{
-            WebkitBackfaceVisibility: "hidden",
-            WebkitTransform: "translateZ(0)",
-            WebkitPerspective: "1000",
-          }}
-        />
-      </div>
-    </div>
-  )
-} 
+    <>
+      {loading && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black">
+          <DotLottieReact
+            src="https://lottie.host/01579b41-7535-466e-9f63-895353820207/a0uuAlS9cF.lottie"
+            loop
+            autoplay
+            style={{ width: 600, height: 700 }}
+          />
+        </div>
+      )}
+    </>
+  );
+};
+
+export const PreloaderGH = () => {
+  console.log("Rendering PreloaderGH (GH page)");
+  const [loading, setLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 4000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <>
+      {loading && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black">
+          <DotLottieReact
+            src="https://lottie.host/e841dc14-7da1-4fda-905f-4f34c2183f7f/aosKWTlVb6.lottie"
+            loop
+            autoplay
+            style={{ width: 400, height: 400 }}
+          />
+        </div>
+      )}
+    </>
+  );
+};
+

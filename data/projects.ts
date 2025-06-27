@@ -2,7 +2,7 @@ import { ProjectCardProps } from "@/components/project-card"
 
 export const projects: ProjectCardProps["project"][] = [
   {
-    title: "AI-copilot",
+    title: "Message Co-pilot",
     description:
       "A model being trained on text messages of all members in the team and gpt-3.5. It accepting prompt and response with basic answers (mostly nonsense because of unsopihsticated data training)",
     technologies: ["Python", "HTML", "CSS"],
@@ -11,16 +11,16 @@ export const projects: ProjectCardProps["project"][] = [
     codeUrl: "https://github.com/shiinyyy/ai-copilot",
   },
   {
-    title: "Portfolio Website",
-    description: "A responsive portfolio website showcases my skills with interactive objects",
-    technologies: ["HTML", "Next.js", "Tailwind CSS", "Framer Motion", "React", "Typescript"],
+    title: "Cyber Threat Intel - MCP",
+    description: "A multi-agent data model designed to support decision-making of a SOC on cyber threats. The architect is extensible, capable of identifying threat groups, their techniques and associated campaigns.",
+    technologies: ["Python", "MITRE ATT&CK", "VirusTotal"],
     image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-03-10%20at%207.10.27%E2%80%AFpm-W85TRu4jeHshvAlXe7vrpd2k9b30Vk.png",
-    demoUrl: "https://minhducdo.info",
+      "/Photos/CTI_Architecture.png",
+    demoUrl: "https://minhducdo.info/google-hackathon-2025",
     codeUrl: "https://github.com/shiinyyy/portfolio",
   },
   {
-    title: "Car-Parking System",
+    title: "Parking System",
     description:
       "An automated parking management system with monitoring using ultrasonic sensors and LCD display for space detection",
     technologies: ["Arduino", "C", "C++", "Verilog HDL"],
@@ -34,7 +34,7 @@ export const projects: ProjectCardProps["project"][] = [
     codeUrl: "https://github.com/shiinyyy/Parking-System-Cyclone-IV",
   },
   {
-    title: "MPPT tracking",
+    title: "MPPT Tracking",
     description:
       "Tracking maximum power point of solar panel to maximise power generation. Perturb and Observe is the main algorithm while artificial neural network represented as fine-tune algorithm to increase the efficiency",
     technologies: ["Arduino", "C", "C++"],
@@ -47,20 +47,20 @@ export const projects: ProjectCardProps["project"][] = [
     title: "Voice Assistant",
     description:
       "Voice assistant as a function for a smart hub. It integrated with multiple api including openAI-4o for data accessibility, Silero and Deepgram for text-to-speech/speech-to-text",
-    technologies: ["Python", "SQL"],
+    technologies: ["Python", "TypeScript"],
     image:
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-03-10%20at%207.15.26%E2%80%AFpm-3GzF9NBivwMFQjYqyt5wyga4yqiekM.png",
     demoUrl: "https://www.figma.com/design/JGIOROtt15pOmdv720hWGT/Minh-Duc-Do?node-id=0-1&t=uNki1yEZxT9FMOjB-1",
     codeUrl: "https://github.com/shiinyyy/Voice_Assistant",
   },
   {
-    title: "Rock, paper, scissors",
-    description: "A simple game I created when praticing conditional function with Js",
-    technologies: ["JavaScript"],
+    title: "FULLSTACK",
+    description: "A responsive portfolio website showcases my skills with interactive objects",
+    technologies: ["HTML", "Next.js", "Tailwind CSS", "React", "Typescript", "Framer Motion",],
     image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-03-10%20at%207.12.15%E2%80%AFpm-Ps7ZqTloFIufoAYKjhRNcnlQxSoXFv.png",
-    demoUrl: "https://github.com/shiinyyy/Rock-paper-scissor",
-    codeUrl: "https://github.com/shiinyyy/Rock-paper-scissor",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-03-10%20at%207.10.27%E2%80%AFpm-W85TRu4jeHshvAlXe7vrpd2k9b30Vk.png",
+    demoUrl: "https://minhducdo.info",
+    codeUrl: "https://github.com/shiinyyy/portfolio",
   },
 ]
 

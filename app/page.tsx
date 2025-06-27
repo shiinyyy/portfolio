@@ -57,6 +57,15 @@ interface ExtracurricularItem {
 // Leadership experience data
 const extracurriculars: ExtracurricularItem[] = [
   {
+    title: "Google Hackathon 2025",
+    role: "Developer",
+    period: "2025",
+    description:
+      "Leveraged Google MCP and MITRE ATT&CK frameworks, create a data model to support a SOC on cyber threat protection and hunting.",
+    image: "/Photos/Extracurricular.png",
+    youtubeUrl: "https://www.youtube.com/watch?v=IaPbNhp40DM",
+  },
+  {
     title: "IX Studio Showcase",
     role: "Instructor",
     period: "2023",
@@ -64,15 +73,6 @@ const extracurriculars: ExtracurricularItem[] = [
       "Mentored a team of 7 for end of year showcase 'Take-off'. Collaborated with team members to create and perform original choreographies, maintaining a professional stage presence.",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_5685.PNG-fBhHL0dYevxgvlUA0OsnKUEZRj09nR.jpeg",
     youtubeUrl: "https://youtu.be/LoorcTLroGc?si=7PHQ_IQbpIFOQAsQ",
-  },
-  {
-    title: "IMI K-pop Competition",
-    role: "Co-leading",
-    period: "2022",
-    description:
-      "Led our team to victory in the IMI KPOP LIVE 2 competition. Coordinated rehearsals, choreography modifications, and team logistics while performing as a lead dancer.",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_5686.PNG-LGNqekFhtkedqqmONyVUOnTtjq8auO.jpeg",
-    youtubeUrl: "https://youtu.be/OkEINKDTbHU?si=u6OPODy8utLe4_yY",
   },
 ]
 
@@ -94,25 +94,22 @@ export default function Portfolio() {
           style={{
             opacity,
             scale,
-            backgroundImage: "url('/bg.jpg')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
             borderRadius: "1rem",
           }}
           className="container px-4 md:px-6 flex flex-col md:flex-row items-center gap-6 md:gap-12"
         >
           <div className="flex flex-col gap-4 md:gap-6 md:w-1/2">
             <h1 className="text-4xl md:text-6xl font-bold tracking-tighter relative group drop-shadow-lg transition-all duration-300 transform hover:scale-[1.02] hover:drop-shadow-[0_0_15px_rgba(139,92,246,0.5)]">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-white transition-all duration-700 ease-in-out group-hover:bg-gradient-to-r group-hover:from-primary group-hover:via-fuchsia-500 group-hover:to-purple-500">
-                Hi, I'm{" "}
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-white transition-all duration-700 ease-in-out group-hover:bg-gradient-to-r group-hover:from-sky-400 group-hover:via-sky-500 group-hover:to-sky-600">
+                Hi, I&apos;m{" "}
                 <span className="text-primary transition-colors duration-700 ease-in-out group-hover:text-white">
-                  Minh Do
+                  Shin
                 </span>
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-zinc-400">
-              A passionate Engineering graduate from University of Technology Sydney specialised in Electrical and Data.
-              I also explore other topics covering computer science, FinTech and major frameworks as a hobby in leisure.
+              A passionate Engineering graduate from University of Technology Sydney, specialising in Electrical and Data.
+              Beyond me core discipline, I actively explore FinTech, computer science and major frameworks as part of my technical interests.
             </p>
             <div className="flex gap-4">
               <Button
@@ -126,7 +123,7 @@ export default function Portfolio() {
               </Button>
               <Button
                 variant="outline"
-                className="hover:bg-zinc-800 transition-colors border-zinc-600 text-black"
+                className="hover:bg-indigo-300 hover:text-white transition-colors border-zinc-600 text-black"
                 onClick={() => {
                   document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
                 }}
@@ -150,7 +147,7 @@ export default function Portfolio() {
       </div>
 
       {/* Skills Section */}
-      <section className="py-20 bg-black">
+      <section className="py-20">
         <div className="container px-4 md:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -160,13 +157,13 @@ export default function Portfolio() {
             className="flex flex-col gap-4 text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold drop-shadow-lg bg-clip-text text-transparent bg-gradient-to-r from-white via-primary/80 to-white relative cursor-default transition-all duration-300 transform hover:scale-[1.02] hover:drop-shadow-[0_0_15px_rgba(139,92,246,0.5)]">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-white transition-all duration-700 ease-in-out hover:bg-gradient-to-r hover:from-primary hover:via-fuchsia-500 hover:to-purple-500">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-white transition-all duration-700 ease-in-out hover:bg-gradient-to-r hover:from-primary hover:via-sky-500 hover:to-cyan-500">
                 Skills and Techstack
               </span>
             </h2>
-            <p className="text-zinc-400 max-w-2xl mx-auto">
-              Throughout my university journey, I've been working with multiple team across various disciplines and
-              accumulated a set of skills that I find appealing
+            <p className="text-zinc-400 text-xl max-w-2xl mx-auto">
+              Throughout my university journey, I&apos;ve been working with multiple diverse-discipline team, 
+              accumulated a set of skills I find appealing and well-align to my career goals.
             </p>
           </motion.div>
 
@@ -189,7 +186,7 @@ export default function Portfolio() {
       </section>
 
       {/* Extracurricular Section */}
-      <section className="py-20 bg-zinc-900">
+      <section className="py-20">
         <div className="container px-4 md:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -198,11 +195,15 @@ export default function Portfolio() {
             viewport={{ once: true }}
             className="flex flex-col gap-4 text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold drop-shadow-md">Extracurricular Activities</h2>
-            <p className="text-zinc-400 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold drop-shadow-lg bg-clip-text text-transparent bg-gradient-to-r from-white via-primary/80 to-white relative cursor-default transition-all duration-300 transform hover:scale-[1.02] hover:drop-shadow-[0_0_15px_rgba(139,92,246,0.5)]">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-white transition-all duration-700 ease-in-out hover:bg-gradient-to-r hover:from-primary hover:via-sky-500 hover:to-cyan-500">
+                Extracurricular 
+              </span>
+            </h2>
+            <p className="text-zinc-400 text-xl max-w-2xl mx-auto">
               Beyond academics, I actively participate in various activities that help me grow personally and
-              professionally. Help to build the commnunity with a start-up, IX Studio. And my friends called my Shiiny
-              :)
+              professionally. 
+              
             </p>
           </motion.div>
 
@@ -217,13 +218,12 @@ export default function Portfolio() {
                 className={`flex flex-col ${index % 2 === 1 ? "md:flex-row-reverse" : "md:flex-row"} items-center gap-8`}
               >
                 <div className="w-full md:w-1/2 relative group">
-                  <div className="aspect-[4/3] overflow-hidden rounded-lg relative">
+                  <div className="relative w-full h-[300px] md:w-[700px] md:h-[500px] overflow-hidden rounded-lg">
                     <Image
                       src={item.image || "/placeholder.svg"}
                       alt={item.title}
                       fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
-                      unoptimized={typeof item.image === "string" && item.image.includes("freepik.com")}
+                      className="object-contain"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-70" />
 
@@ -265,7 +265,10 @@ export default function Portfolio() {
                     <div className="mt-4 flex items-center justify-between">
                       <div className="flex items-center">
                         <div className="h-1 w-12 bg-primary rounded-full mr-4"></div>
-                        <span className="text-primary/90 font-medium transition-opacity hover:text-primary/100 text-shadow">
+                        <span
+                          className="font-medium transition-opacity text-shadow"
+                          style={{ color: "color(srgb 0.41 0.4 1)" }}
+                        >
                           {item.role}
                         </span>
                       </div>
@@ -273,7 +276,7 @@ export default function Portfolio() {
                       <Button
                         variant="outline"
                         size="sm"
-                        className="bg-zinc-800 hover:bg-zinc-700 border-zinc-700 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20"
+                        className="bg-zinc-800 hover:bg-white border-zinc-700 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20"
                         asChild
                       >
                         <Link href={item.youtubeUrl} target="_blank" rel="noopener noreferrer">
@@ -292,9 +295,6 @@ export default function Portfolio() {
 
       {/* Location Section */}
       <section className="py-20 relative overflow-hidden">
-        {/* Gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-b from-zinc-900 via-zinc-800 to-zinc-900"></div>
-
         {/* Decorative elements */}
         <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-primary/10 to-transparent"></div>
         <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-primary/10 to-transparent"></div>
@@ -309,7 +309,11 @@ export default function Portfolio() {
             viewport={{ once: true }}
             className="flex flex-col gap-4 text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold drop-shadow-md">My Location</h2>
+            <h2 className="text-3xl md:text-4xl font-bold drop-shadow-lg bg-clip-text text-transparent bg-gradient-to-r from-white via-primary/80 to-white relative cursor-default transition-all duration-300 transform hover:scale-[1.02] hover:drop-shadow-[0_0_15px_rgba(139,92,246,0.5)]">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-white transition-all duration-700 ease-in-out hover:bg-gradient-to-r hover:from-primary hover:via-sky-500 hover:to-cyan-500">
+                My Location
+              </span>
+            </h2>
           </motion.div>
 
           <motion.div
@@ -317,7 +321,7 @@ export default function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true, margin: "-100px" }}
-            className="w-full max-w-4xl mx-auto"
+            className="w-full max-w-7xl mx-auto"
           >
             <div className="relative group">
               <div className="bg-zinc-800/80 backdrop-blur-md p-4 md:p-6 rounded-xl border border-zinc-700/50 shadow-xl">
@@ -325,8 +329,8 @@ export default function Portfolio() {
                 <div className="relative overflow-hidden rounded-lg">
                   <div className="aspect-[16/9] relative">
                     <Image
-                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-03-10%20at%209.49.08%E2%80%AFam-eRVcnGqSk3XMskfrh0kEeI2VuO39h3.png"
-                      alt="Map of Sydney CBD and surrounding suburbs"
+                      src="Photos/my_location.png"
+                      alt="My Location"
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
@@ -335,29 +339,32 @@ export default function Portfolio() {
                     <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                     {/* Location marker with pulsing animation */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+                    <div
+                      className="absolute z-10"
+                      style={{ top: "32%", left: "57%", transform: "translate(-50%, -50%)" }}
+                    >
                       <div className="relative">
                         <div className="absolute -inset-8 rounded-full bg-primary/20 animate-pulse"></div>
                         <div className="absolute -inset-5 rounded-full bg-primary/30 animate-pulse animation-delay-300"></div>
                         <div className="absolute -inset-3 rounded-full bg-primary/40 animate-pulse animation-delay-600"></div>
                         <div className="relative w-6 h-6 bg-primary rounded-full shadow-lg shadow-primary/50 flex items-center justify-center">
-                          <MapPin className="h-4 w-4 text-white" />
                         </div>
                       </div>
                     </div>
 
                     {/* Interactive overlay */}
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+                    <div className="absolute inset-0 flex items-end justify-center pb-6 opacity-0 group-hover:opacity-100 transition-all duration-500">
                       <Link
-                        href="https://www.google.com/maps/place/Sydney+NSW/@-33.868766,151.1936442,13.69z/data=!4m6!3m5!1s0x6b129838f39a743f:0x3017d681632a850!8m2!3d-33.8688197!4d151.2092955!16zL20vMDZ5NTc?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D"
+                        href="https://earth.google.com/web/search/Sydney+NSW,+Australia/@-33.9325579,151.10724308,-0a,14395.48699837d,44.46884926y,15.02299889h,59.25009276t,0r/data=CiwiJgokCb4po9hR1EDAEfTUrh0KBkHAGdBdiXb_7GJAITiwOjKg3mJAQgIIAjIpCicKJQohMUUtMkVOcVBCOG00c0RUcHROcy1KdFBUUnpGb19IVi1jIAE6AwoBMEICCABKCAiyj6_zBBAB"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-full font-medium shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 flex items-center"
+                        className="bg-primary hover:bg-white hover:text-black text-white px-6 py-3 rounded-full font-medium shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 flex items-center"
                       >
                         <MapPin className="mr-2 h-5 w-5" />
-                        Open in Google Maps
+                        Observation
                         <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                       </Link>
+                      
                     </div>
                   </div>
                 </div>
@@ -366,7 +373,7 @@ export default function Portfolio() {
                 <div className="mt-6 flex flex-col md:flex-row items-center justify-between">
                   <div className="flex items-center mb-4 md:mb-0">
                     <div className="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center mr-4">
-                      <MapPin className="h-5 w-5 text-primary" />
+                      <MapPin className="h-5 w-5 text-white" />
                     </div>
                     <div>
                       <h3 className="text-xl font-bold">Sydney CBD</h3>
@@ -376,7 +383,7 @@ export default function Portfolio() {
                 </div>
               </div>
 
-              {/* Decorative corner elements */}
+              {/* Corner elements */}
               <div className="absolute -top-3 -left-3 w-6 h-6 border-t-2 border-l-2 border-primary/50 rounded-tl-lg"></div>
               <div className="absolute -top-3 -right-3 w-6 h-6 border-t-2 border-r-2 border-primary/50 rounded-tr-lg"></div>
               <div className="absolute -bottom-3 -left-3 w-6 h-6 border-b-2 border-l-2 border-primary/50 rounded-bl-lg"></div>
@@ -385,7 +392,7 @@ export default function Portfolio() {
           </motion.div>
         </div>
       </section>
-      <section id="contact" className="py-20 bg-zinc-900">
+      <section id="contact" className="py-20">
         <div className="container px-4 md:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -394,10 +401,13 @@ export default function Portfolio() {
             viewport={{ once: true }}
             className="max-w-2xl mx-auto text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold drop-shadow-md mb-4">Get In Touch</h2>
-            <p className="text-zinc-400">
-              I recently completed my last units on November 2024. You can find me on social media and my project
-              repositories here
+            <h2 className="text-3xl md:text-4xl font-bold drop-shadow-lg bg-clip-text text-transparent bg-gradient-to-r from-white via-primary/80 to-white relative cursor-default transition-all duration-300 transform hover:scale-[1.02] hover:drop-shadow-[0_0_15px_rgba(139,92,246,0.5)]">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-white transition-all duration-700 ease-in-out hover:bg-gradient-to-r hover:from-primary hover:via-sky-500 hover:to-cyan-500">
+                Contact
+              </span>
+            </h2>
+            <p className="text-zinc-400 text-xl">
+              Connect with me and share your projects!
             </p>
           </motion.div>
 
@@ -411,7 +421,7 @@ export default function Portfolio() {
             <Button
               variant="outline"
               size="lg"
-              className="hover:bg-zinc-800 transition-colors border-zinc-600 text-black"
+              className="hover:bg-indigo-300 hover:text-white transition-colors border-zinc-600 text-black"
               asChild
             >
               <Link href="mailto:minhduc.do0799@gmail.com" target="_blank" rel="noopener noreferrer">
@@ -422,7 +432,7 @@ export default function Portfolio() {
             <Button
               variant="outline"
               size="lg"
-              className="hover:bg-zinc-800 transition-colors border-zinc-600 text-black"
+              className="hover:bg-indigo-300 hover:text-white transition-colors border-zinc-600 text-black"
               asChild
             >
               <Link href="https://www.linkedin.com/in/minh-duc-do/" target="_blank" rel="noopener noreferrer">
@@ -433,7 +443,7 @@ export default function Portfolio() {
             <Button
               variant="outline"
               size="lg"
-              className="hover:bg-zinc-800 transition-colors border-zinc-600 text-black"
+              className="hover:bg-indigo-300 hover:text-white transition-colors border-zinc-600 text-black"
               asChild
             >
               <Link href="https://github.com/shiinyyy" target="_blank" rel="noopener noreferrer">
