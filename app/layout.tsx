@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Noto_Sans } from "next/font/google";
 import "./globals.css";
 import MouseHighlight from "@/components/mouse-highlight";
 import PreloaderWrapper from "./PreloaderWrapper";
 
-const inter = Inter({
+const notoSans = Noto_Sans({
   variable: "--font-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -31,7 +32,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
-      <body className={`${inter.variable} antialiased`}>
+      <body className={`${notoSans.variable} antialiased`}>
         <PreloaderWrapper />
         <MouseHighlight />
         {children}

@@ -13,7 +13,7 @@ export default function ProjectsSection() {
 
   return (
     <section className="py-20 relative overflow-hidden">
-      {/* Remove all background and gradient divs here */}
+      {/* Remove all background and gradient divs*/}
       <div className="container px-4 md:px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -28,7 +28,7 @@ export default function ProjectsSection() {
               </span>
             </h2>
           <p className="text-zinc-400 text-xl max-w-2xl mx-auto">
-            Here are some of my recent projects implemented different technologies and domains
+            Here are some of my recent projects, implemented different technologies and domains.
           </p>
         </motion.div>
 

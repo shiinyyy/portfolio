@@ -52,7 +52,7 @@ export const PreloaderGH = () => {
             src="https://lottie.host/e841dc14-7da1-4fda-905f-4f34c2183f7f/aosKWTlVb6.lottie"
             loop
             autoplay
-            style={{ width: 300, height: 300 }}
+            style={{ width: 250, height: 250 }}
           />
         </div>
       )}

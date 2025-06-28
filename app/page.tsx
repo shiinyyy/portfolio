@@ -87,7 +87,7 @@ export default function Portfolio() {
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.95, 0.9])
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-zinc-950 text-white">
       {/* Hero Section */}
       <section ref={ref} className="relative h-screen flex flex-col items-center justify-center overflow-hidden">
         <motion.div
@@ -216,9 +216,10 @@ export default function Portfolio() {
                 transition={{ duration: 0.7, delay: index * 0.2 }}
                 viewport={{ once: true, margin: "-100px" }}
                 className={`flex flex-col ${index % 2 === 1 ? "md:flex-row-reverse" : "md:flex-row"} items-center gap-8`}
+                
               >
                 <div className="w-full md:w-1/2 relative group">
-                  <div className="relative w-full h-[300px] md:w-[700px] md:h-[500px] overflow-hidden rounded-lg">
+                  <div className="relative w-full h-[300px] md:w-[650px] md:h-[500px] overflow-hidden rounded-lg backdrop-blur-sm border border-white/10 bg-gradient-to-r from-zinc-900/80 via-white/5 to-transparent">
                     <Image
                       src={item.image || "/placeholder.svg"}
                       alt={item.title}
@@ -321,10 +322,10 @@ export default function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true, margin: "-100px" }}
-            className="w-full max-w-7xl mx-auto"
+            className="w-full max-w-5xl mx-auto"
           >
             <div className="relative group">
-              <div className="bg-zinc-800/80 backdrop-blur-md p-4 md:p-6 rounded-xl border border-zinc-700/50 shadow-xl">
+              <div className="backdrop-blur-sm border border-white/10 hover:border-white/40 p-6 rounded-3xl md:p-6 shadow-xl h-full bg-gradient-to-r from-transparent via-white/5 to-transparent">
                 {/* Map container */}
                 <div className="relative overflow-hidden rounded-lg">
                   <div className="aspect-[16/9] relative">
@@ -332,7 +333,7 @@ export default function Portfolio() {
                       src="Photos/my_location.png"
                       alt="My Location"
                       fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="object-cover transition-transform duration-700 group-hover:scale-105 "
                     />
 
                     {/* Map overlay with glowing effect */}

@@ -37,9 +37,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
     return () => clearInterval(interval)
   }, [project.images])
-
   return (
-    <Card className="bg-zinc-900/70 backdrop-blur-md border-black hover:border-white transition-colors overflow-hidden group h-full flex flex-col">
+    <Card className="backdrop-blur-sm bg-gradient-to-r from-zinc-900/80 via-white/5 to-transparent border-black hover:border-white p-6 rounded-2xl transition-colors overflow-hidden group h-full flex flex-col">
       <div className="aspect-video bg-zinc-950 relative overflow-hidden">
         <Image
           src={currentImage || "/placeholder.svg?height=400&width=600"}
